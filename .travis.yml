@@ -8,3 +8,10 @@ addons:
     - mongodb-3.2-precise
     packages:
     - mongodb-org-server
+deploy:
+  provider: heroku
+  api_key:
+    secure: celVOkcI5ioIvYwghCk0mX3iOTV4n+YceXp4pOmnoGODS+62Jy5CzulbH7sN34aEa6WdnKL6QOR9gWRK0A8tcGZUqXx+t/eftGCXUcgfL9qRglhxFQ3FekFJ6oV+vX5/AiyOwDeJiQ0iTDMdjHSZfyPHavO2tgFiLHent+n4hE+Q4YEuGrbDrFkMY3Ba2rfL0SjyQAEQpr0MnCERC3sMtKSv2H5+6REvr8r0VKpvSjOf1css69nr4kpPjcpi0AZlu7b8BgmZsjizGYT4EfM65NaP56g2o/G0XkduC2738DRhcyWD4UGaCTBTPioRNkz9ITX5NpSkhDNs9fQlhzVjxjhZZihAPK9JnPJrVhCI9bmFK4nlTJTwSXLIw1r2+o49iV0J5UHuioVela3cZtqhCZ4WvT7D6a3N3pf5BVwpRKbvmM0bH7O8lDr82SVuHZh9f17O3MvTxpVXsyxDs5CAvwiG94oT4phMDfe1q3WJD36xuwNIfSAwhyvU6wTXTlKdy37+uquXkSU6ttP6kmtVUm+TjGdo+PYDBMFfhxJY16k/7S8Sq/XnpxdReyMf3OytlYJCfhieRq151P7nkiLRokYl7Oaac9cws3XvyOHpxP1Djg/4f9pqHXtxJ0TxRkV/cho7I1escnZlusiZcM9Dkmt6xrEfpfOATplzM/k9xxw=
+  app: arcane-citadel-54908
+  on:
+    repo: angiecrellin/allergen-free-recipes
