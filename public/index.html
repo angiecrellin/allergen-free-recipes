@@ -29,6 +29,78 @@
             </div>
     </section>
     <section class='results'>
+        <ul> 
+        </ul>
+        
+    </section>
+    <section id='add-recipe'>
+        <form class='addForm'>
+          <label>
+              Name: <input type="text" name="name">
+          </label>  
+          <label>
+              Cateogry: <select name="category" id="category">
+                 <option>
+                     select option
+                 </option>
+                 <option>
+                     Breakfast
+                 </option>
+                 <option>
+                     Lunch
+                 </option>
+                 <option>
+                     Dinner
+                 </option>
+                 <option>
+                     Snack
+                 </option>
+                 <option>
+                     Dessert
+                 </option>
+              </select>
+          </label>
+          <label for="ingredients">
+              Ingredients:
+              <div class='addAnItem'>
+                  <input class='item' type="text">
+              </div>
+              <a class='add-ingredient' href="#">Add an Ingredient</a>
+            </label>
+            <label for="directions">Directions:
+            <textarea name="directions" id="directions" cols="30" rows="4"></textarea>
+            </label>
+            <label for="freeOfAllergens">Free of Allergens:
+            </label>
+            <label for="">
+                <input class = 'allergenInput' type="checkbox" value="Peanut"> Peanut
+            </label>
+            <label for="">
+                <input class = 'allergenInput' type="checkbox" value="Treenut"> Treenut
+            </label>
+            <label for="">
+                <input class = 'allergenInput' type="checkbox" value="Shellfish"> Shellfish
+            </label>
+            <label for="">
+                <input class = 'allergenInput' type="checkbox" value="Fish"> Fish
+            </label>
+            <label for="">
+                <input class = 'allergenInput' type="checkbox" value="Milk"> Milk
+            </label>
+            <label for="">
+                <input class = 'allergenInput' type="checkbox" value="Egg"> Egg
+            </label>
+            <label for="">
+                <input class = 'allergenInput' type="checkbox" value="Wheat"> Wheat
+            </label>
+            <label for="">
+                <input class = 'allergenInput' type="checkbox" value="Soy"> Soy
+            </label>
+            <button type='submit'>Add Recipe 
+                
+            </button>
+        </form>
+        
         
     </section>
        

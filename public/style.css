@@ -63,3 +63,13 @@ button {
     font-size: large;
     text-align: center;
 }
+
+.results {
+    list-style: none;
+    margin: 0 auto;
+}
+
+.addForm label {
+    display: block;
+    
+}
