@@ -37,7 +37,6 @@ var index = null;
 
 
 
-// this will change once API up and running
 
 var getRecipes = function() {
     return $.ajax({
@@ -46,7 +45,7 @@ var getRecipes = function() {
         });
 };
 
-// show recipes
+
 var showRecipes = function(data) {
     var $searchResults = $('.results')
     

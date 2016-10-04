@@ -169,17 +169,10 @@ button {
     
 }
 
-.title .freeOf {
-    text-align: justify;
+.title .ingredientHead {
+    display: inline;
+    text-align: left;
 }
-
-/*.results-template {*/
-    /*text-align: left;*/
-/*}*/
-
-/*.recipe-results {*/
-    /*text-align: left;*/
-/*}*/
 
 #add-recipe {
     width: 65%;
