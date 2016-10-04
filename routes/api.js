@@ -56,10 +56,10 @@ router.post('/recipes', function(request, response) {
     }
     Recipe.create({
         name: request.body.name,
-         ingredients: request.body.ingredients,
+        ingredients: request.body.ingredients,
         directions: request.body.directions,
-            category: request.body.category,
-            allergenFree: request.body.allergenFree
+        category: request.body.category,
+        allergenFree: request.body.allergenFree
     }, function(err, recipes) {
         if (err) {
             return response.status(500).json({
@@ -88,10 +88,10 @@ router.put('/recipes/:id', function(request, response) {
         _id: request.params.id
     }, {
         name: request.body.name,
-            ingredients: request.body.ingredients,
-            directions: request.body.directions,
-            category: request.body.category,
-            allergenFree: request.body.allergenFree
+        ingredients: request.body.ingredients,
+        directions: request.body.directions,
+        category: request.body.category,
+        allergenFree: request.body.allergenFree
     }, {
         new: true,
         upsert: true,
@@ -125,6 +125,18 @@ router.delete('/recipes/:id', function(request, response) {
     });
 
 });
+
+router.get('/recipes/deleteAll', function(request, response) {
+    Recipe.remove({}, function(error) {
+        if (error) {
+            return response.status(400).json({
+                message: 'an error occurred'
+            });
+
+        }
+        response.status(200).json({});
+    })
+})
 
 router.use('*', function(req, res) {
     res.status(404).json({

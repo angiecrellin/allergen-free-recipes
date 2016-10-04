@@ -35,29 +35,59 @@ var MOCK_RECIPES = {
 /* global $ */
 var index = null;
 
+
+
 // this will change once API up and running
 
-var getRecipes = function(callbackFn) {
-    setTimeout(function() {
-        callbackFn(MOCK_RECIPES)
-    }, 100);
+var getRecipes = function() {
+    return $.ajax({
+            method: 'GET',
+            url: '/api/recipes',
+        });
 };
 
 // show recipes
 var showRecipes = function(data) {
-    for (index in data.recipes) {
-        $('.results').append('<p>' + data.recipes[index].text + '</p>');
-    }
+    var $searchResults = $('.results')
+    
+    data.forEach(function(recipe){
+        var template = $('#results-template').html()
+        var html=template.replace('{name}', recipe.name)
+        .replace('{allergens}', recipe.allergenFree.join(', ') )
+        .replace('{category}', recipe.category )
+        .replace('{directions}', recipe.directions)
+        var $el = $(html)
+        recipe.ingredients.forEach(function(ingredient){
+          $el.find('.recipeIngredients').append('<li>' + ingredient + '</li>' )
+        })
+        $searchResults.append($el);
+    })
+    
+    
 
 };
 
 var getAndShowRecipes = function() {
-    getRecipes(showRecipes);
+    getRecipes().then(function(results){
+        showRecipes(results);
+    });
 };
 
 getAndShowRecipes();
 
 $(document).ready(function() {
+    
+    $(".howTo").click(function() {
+        $(".overlay").fadeIn(1000);
+
+    });
+
+
+    $("a.close").click(function() {
+        $(".overlay").fadeOut(1000);
+    });
+    
+    
     var $addForm = $('.addForm')
     var $addAnItemContainer = $('.addAnItem')
     $('.add-ingredient').on('click', function(event) {
@@ -66,6 +96,8 @@ $(document).ready(function() {
             'class': 'item'
         }))
     })
+
+
 
     $addForm.on('submit', function(event) {
         event.preventDefault();
@@ -76,15 +108,32 @@ $(document).ready(function() {
             'directions': $addForm.find('[name=directions]').val(),
             'allergenFree': getInputAllergens(),
 
+
         };
+
         console.log(data);
-        
-        createNewRecipe(data).then(function(data){
+
+
+        createNewRecipe(data).then(function(data) {
             console.log(data);
+
+
         });
         
+        
 
+        resetForm();
 
+    })
+
+    
+        function resetForm() {
+        $('.addForm').trigger("reset");
+        $('.addForm').find('.item:not(:first-child)').remove();
+        }
+
+    $('.addRecipe').click(function() {
+        $('#add-recipe').show();
     })
 
     function getInputIngredients() {
@@ -112,8 +161,8 @@ $(document).ready(function() {
         return data;
 
     }
-    
-    function createNewRecipe(data){
+
+    function createNewRecipe(data) {
         return $.ajax({
             method: 'POST',
             url: '/api/recipes',

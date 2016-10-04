@@ -1,10 +1,15 @@
 <!doctype html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Allergen Free Recipes</title>
     <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="./normalize.css">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light+Two" rel="stylesheet">
 </head>
+
 <body>
     <header>
         <nav>
@@ -12,11 +17,29 @@
                 <li class='howTo'>Find Allergen Free Recipes?</li>
                 <li class='new'>+New Search</li>
             </ul>
+            <ul>
+                <li class='addRecipe'>+Add a Recipe</li>
+            </ul>
         </nav>
     </header>
-        <h1>Allergen Free Recipes</h1>
+    <div class="overlay" id="modal">
+        <div class="content">
+            <h3>How do I find allergen free recipes?</h3>
+            <div>
+                <p>Living with a food allergy can be challenging. Here you can search for healthy recipes that are free of one or more of the following allergens: Peanut, Treenut, Shellfish, Fish, Milk, Egg, Soy and Wheat. </p>
+                <ul>
+                    <li>1. Click on the allergens you want to avoid.</li>
+                    <li>2. Click on the "Search for Recipes" button.</li>
+                    <li>3. Add your own allergen free recipes by clicking "Add a Recipe" and filling in the form.
+                </ul>
+                <p>Enjoy!</p>
+                <a class="close" href="#">Got It!</a>
+            </div>
+        </div>
+    </div>
+    <h1>Allergen Free Recipes</h1>
     <section class='search'>
-        <h3>Choose the Allergen(s) You Want to Avoid</h3>
+        <h2>Choose the Allergen(s) You Want to Avoid</h3>
             <div class='allergens'>
                 <button id='peanut'>Peanut</button>
                 <button id='treeNut'>TreeNut</button>
@@ -27,19 +50,37 @@
                 <button id='fish'>Fish</button>
                 <button id='shellfish'>Shellfish</button>
             </div>
+            <div class=submitSearch>
+                <button class=recipeSearch>Search for Recipes</button>
+            </div>
     </section>
     <section class='results'>
-        <ul> 
-        </ul>
-        
+
     </section>
+
+    <script type='text/template' id='results-template'>
+        <div class='recipeResult'>
+            <h2 class='cat'>{category}</h2>
+            <h2 class ='title'>{name}</h2>
+            <h3 class ='freeOf'>Free of: {allergens}</h3>
+
+            <ul class=recipeIngredients>
+                <h2>Ingredients:
+            </ul>
+            <p>{directions}</p>
+
+        </div>
+    </script>
+
     <section id='add-recipe'>
+        <h2>Add a Recipe</h2>
         <form class='addForm'>
-          <label>
-              Name: <input type="text" name="name">
-          </label>  
-          <label>
-              Cateogry: <select name="category" id="category">
+
+            <label>
+              Name: <input type="text" name="name" id="name">
+          </label>
+            <label>
+              Category: <select name="category" id="category">
                  <option>
                      select option
                  </option>
@@ -60,17 +101,18 @@
                  </option>
               </select>
           </label>
-          <label for="ingredients">
+            <label for="ingredients">
               Ingredients:
               <div class='addAnItem'>
                   <input class='item' type="text">
               </div>
               <a class='add-ingredient' href="#">Add an Ingredient</a>
+        
             </label>
             <label for="directions">Directions:
             <textarea name="directions" id="directions" cols="30" rows="4"></textarea>
             </label>
-            <label for="freeOfAllergens">Free of Allergens:
+            <label class='freeOfAllergens' for="freeOfAllergens">Free of Allergen(s):
             </label>
             <label for="">
                 <input class = 'allergenInput' type="checkbox" value="Peanut"> Peanut
@@ -96,15 +138,16 @@
             <label for="">
                 <input class = 'allergenInput' type="checkbox" value="Soy"> Soy
             </label>
+
             <button type='submit'>Add Recipe 
                 
             </button>
         </form>
-        
-        
+
     </section>
-       
-<script src="//code.jquery.com/jquery-2.1.0.js"></script>
-<script src="app.js"></script>  
+
+    <script src="//code.jquery.com/jquery-2.1.0.js"></script>
+    <script src="app.js"></script>
 </body>
+
 </html>
