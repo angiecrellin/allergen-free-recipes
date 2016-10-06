@@ -154,7 +154,7 @@ button {
     border: 5px solid;
     border-radius: 20px;
     box-shadow: 3px 3px;
-    display: block;
+    display: none;
 }
 
 .title, .ingredientHead {

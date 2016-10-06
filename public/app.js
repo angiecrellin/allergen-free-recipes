@@ -1,52 +1,14 @@
-// Mock data - API will return data that looks like this
-
-var MOCK_RECIPES = {
-    'recipes': [{
-            'name': 'Cherry Chicken Lettuce Wraps',
-            'ingredients': [
-                '2 tablespoons canola oil, divided',
-                '1 1/4 pounds skinless, boneless chicken breast halves, cut into bite-size pieces',
-                '1 tablespoon minced fresh ginger root',
-                '2 tablespoons rice vinegar',
-                '2 tablespoons teriyaki sauce',
-                '1 tablespoon honey',
-                '1 pound dark sweet cherries, pitted and halved',
-                '1 1/2 cups shredded carrots',
-                '1/2 cup chopped green onion',
-                '1/3 cup toasted and sliced almonds',
-                '12 lettuce leaves',
-            ],
-            'directions': 'Heat 1 tablespoon oil in a large skillet over medium-high heat. Saute chicken and ginger in hot oil until chicken is cooked through, 7 to 10 minutes. Set aside.Whisk vinegar, teriyaki sauce, remaining 1 tablespoon oil, and honey together in a bowl. Add chicken mixture, cherries, carrots, green onion, and almonds; toss to combine.Spoon 1/12 the chicken/cherry mixture onto the center of each lettuce leaf; roll leaf around filling and serve.',
-            'category': 'Breakfast',
-            'allergenFree': [
-                'peanut',
-                'treenut',
-                'fish',
-                'shellfish',
-                'soy',
-                'wheat',
-            ],
-
-        },
-
-    ]
-};
-
 /* global $ */
 var index = null;
 
-function getSearchResults(){
-        return $.ajax({
-            method: 'GET',
-            url: '/api/recipes/search',
-            name: 'name',
-            ingredients: ['ingredients'],
-            directions: 'directions',
-            category: 'category',
-            allergenFree: ['allergenFree'],
-            
-        })
-    }
+function getSearchResults(data) {
+    return $.ajax({
+        method: 'GET',
+        url: '/api/recipes/search',
+        data: data,
+
+    })
+}
 
 
 /*var getRecipes = function() {
@@ -60,7 +22,7 @@ function getSearchResults(){
 var showRecipes = function(data) {
     var $searchResults = $('.results')
 
-        data.forEach(function(recipe) {
+    data.forEach(function(recipe) {
         var template = $('#results-template').html()
         var html = template.replace('{name}', recipe.name)
             .replace('{allergens}', recipe.allergenFree.join(', '))
@@ -71,19 +33,24 @@ var showRecipes = function(data) {
             $el.find('.recipeIngredients').append('<li>' + ingredient + '</li>')
         })
         $searchResults.append($el);
-    })
-
-
+    });
+    
+    $searchResults.show();
 
 };
 
+var clearRecipes = function(){
+    $('.results').html('').hide();
+    
+}
+
 var getAndShowRecipes = function() {
-    showRecipes().then(function(results) {
+    getSearchResults().then(function(results) {
         showRecipes(results);
     });
 };
 
-getAndShowRecipes();
+// getAndShowRecipes();
 
 $(document).ready(function() {
 
@@ -92,6 +59,21 @@ $(document).ready(function() {
 
         var data = getInputAllergens($('.search-form'))
         console.log(data)
+        getSearchResults({
+            allergenFree: data
+        }).then(function(results) {
+            showRecipes(results);
+        });
+        
+        
+
+
+    })
+
+    $('.new').on('click', function(event){
+        event.preventDefault();
+        $('.search-form').get(0).reset();
+        clearRecipes();
     })
 
     $(".howTo").click(function() {
@@ -152,8 +134,8 @@ $(document).ready(function() {
     $('.addRecipe').click(function() {
         $('#add-recipe').show();
     })
-    
-    
+
+
 
     function getInputIngredients() {
         var data = [];
