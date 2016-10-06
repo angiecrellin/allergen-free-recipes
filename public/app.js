@@ -35,39 +35,50 @@ var MOCK_RECIPES = {
 /* global $ */
 var index = null;
 
-
-
-
-var getRecipes = function() {
-    return $.ajax({
+function getSearchResults(){
+        return $.ajax({
             method: 'GET',
-            url: '/api/recipes',
-        });
-};
+            url: '/api/recipes/search',
+            name: 'name',
+            ingredients: ['ingredients'],
+            directions: 'directions',
+            category: 'category',
+            allergenFree: ['allergenFree'],
+            
+        })
+    }
+
+
+/*var getRecipes = function() {
+    return $.ajax({
+        method: 'GET',
+        url: '/api/recipes',
+    });
+};*/
 
 
 var showRecipes = function(data) {
     var $searchResults = $('.results')
-    
-    data.forEach(function(recipe){
+
+        data.forEach(function(recipe) {
         var template = $('#results-template').html()
-        var html=template.replace('{name}', recipe.name)
-        .replace('{allergens}', recipe.allergenFree.join(', ') )
-        .replace('{category}', recipe.category )
-        .replace('{directions}', recipe.directions)
+        var html = template.replace('{name}', recipe.name)
+            .replace('{allergens}', recipe.allergenFree.join(', '))
+            .replace('{category}', recipe.category)
+            .replace('{directions}', recipe.directions)
         var $el = $(html)
-        recipe.ingredients.forEach(function(ingredient){
-          $el.find('.recipeIngredients').append('<li>' + ingredient + '</li>' )
+        recipe.ingredients.forEach(function(ingredient) {
+            $el.find('.recipeIngredients').append('<li>' + ingredient + '</li>')
         })
         $searchResults.append($el);
     })
-    
-    
+
+
 
 };
 
 var getAndShowRecipes = function() {
-    getRecipes().then(function(results){
+    showRecipes().then(function(results) {
         showRecipes(results);
     });
 };
@@ -75,7 +86,14 @@ var getAndShowRecipes = function() {
 getAndShowRecipes();
 
 $(document).ready(function() {
-    
+
+    $('.search-form').on('submit', function(event) {
+        event.preventDefault();
+
+        var data = getInputAllergens($('.search-form'))
+        console.log(data)
+    })
+
     $(".howTo").click(function() {
         $(".overlay").fadeIn(1000);
 
@@ -85,8 +103,8 @@ $(document).ready(function() {
     $("a.close").click(function() {
         $(".overlay").fadeOut(1000);
     });
-    
-    
+
+
     var $addForm = $('.addForm')
     var $addAnItemContainer = $('.addAnItem')
     $('.add-ingredient').on('click', function(event) {
@@ -105,7 +123,7 @@ $(document).ready(function() {
             'category': $addForm.find('[name=category]').val(),
             'ingredients': getInputIngredients(),
             'directions': $addForm.find('[name=directions]').val(),
-            'allergenFree': getInputAllergens(),
+            'allergenFree': getInputAllergens($addForm),
 
 
         };
@@ -118,22 +136,24 @@ $(document).ready(function() {
 
 
         });
-        
-        
+
+
 
         resetForm();
 
     })
 
-    
-        function resetForm() {
+
+    function resetForm() {
         $('.addForm').trigger("reset");
         $('.addForm').find('.item:not(:first-child)').remove();
-        }
+    }
 
     $('.addRecipe').click(function() {
         $('#add-recipe').show();
     })
+    
+    
 
     function getInputIngredients() {
         var data = [];
@@ -149,9 +169,9 @@ $(document).ready(function() {
 
     }
 
-    function getInputAllergens() {
+    function getInputAllergens($form) {
         var data = [];
-        $addForm.find('.allergenInput:checked').each(function() {
+        $form.find('.allergenInput:checked').each(function() {
             var $item = $(this)
             data.push($item.val());
 

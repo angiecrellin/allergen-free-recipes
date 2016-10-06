@@ -8,34 +8,7 @@ module.exports = router;
 var Recipe = require('../models/recipe');
 
 
-/*Recipe.prototype.put = function(recipe) {
-    var index = this.getIndexById(recipe.id);
-    if (index > -1) {
-        this.recipes.splice(index, 1, recipe);
-    }
-    else {
-        this.recipes.push(recipe);
-    }
-    return recipe;
-};
 
-Recipe.prototype.delete = function(id) {
-    var index = this.getIndexById(id);
-    if (index > -1) {
-        this.recipes.splice(index, 1);
-    }
-
-};
-
-Recipe.prototype.getIndexById = function(id) {
-    var recipeIndex = -1;
-    this.recipes.forEach(function(recipe, index) {
-        if (recipe.id === Number(id)) {
-            recipeIndex = index
-        }
-    });
-    return recipeIndex;
-};*/
 
 router.get('/recipes', function(req, res) {
     Recipe.find(function(err, recipes) {
@@ -135,6 +108,19 @@ router.get('/recipes/deleteAll', function(request, response) {
 
         }
         response.status(200).json({});
+    })
+})
+
+router.get('/recipes/search', function(request, response){
+    console.log(request.query)
+    Recipe.find({'allergenFree': {$all:request.query.allergenFree}}, function(err,results){
+        if (err) {
+            return response.status(400).json({
+                message: 'an error occurred'
+            });
+
+        }
+        response.status(200).json(results);
     })
 })
 

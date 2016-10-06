@@ -39,39 +39,61 @@
     </div>
     <h1>Allergen Free Recipes</h1>
     <section class='search'>
-        <h2>Choose the Allergen(s) You Want to Avoid</h3>
+        <h2>Choose the Allergen(s) You Want to Avoid</h2>
+            <form class='search-form'>
             <div class='allergens'>
-                <button id='peanut'>Peanut</button>
-                <button id='treeNut'>TreeNut</button>
-                <button id='milk'>Milk</button>
-                <button id='egg'>Egg</button>
-                <button id='wheat'>Wheat</button>
-                <button id='soy'>Soy</button>
-                <button id='fish'>Fish</button>
-                <button id='shellfish'>Shellfish</button>
+                
+        
+            <label for="">
+                <input class = 'allergenInput' type="checkbox" value="peanut"> Peanut
+            </label>
+            <label for="">
+                <input class = 'allergenInput' type="checkbox" value="treenut"> Treenut
+            </label>
+            <label for="">
+                <input class = 'allergenInput' type="checkbox" value="shellfish"> Shellfish
+            </label>
+            <label for="">
+                <input class = 'allergenInput' type="checkbox" value="fish"> Fish
+            </label>
+            <label for="">
+                <input class = 'allergenInput' type="checkbox" value="milk"> Milk
+            </label>
+            <label for="">
+                <input class = 'allergenInput' type="checkbox" value="egg"> Egg
+            </label>
+            <label for="">
+                <input class = 'allergenInput' type="checkbox" value="wheat"> Wheat
+            </label>
+            <label for="">
+                <input class = 'allergenInput' type="checkbox" value="soy"> Soy
+            </label> 
+                
             </div>
             <div class=submitSearch>
                 <button class=recipeSearch>Search for Recipes</button>
             </div>
+            </form>
     </section>
     <section class='results'>
+        </section>
 
+
+
+        <script type='text/template' id='results-template'>
+            <div class='recipeResult'>
+                <h2 class='cat'>{category}</h2>
+                <h2 class='title'>{name}</h2>
+                <h3 class='freeOf'>Free of: {allergens}</h3>
+                    <h2 class='ingredientHead'>Ingredients:</h2>
+                <ul class='recipeIngredients'>
+                    
+                </ul>
+                <p>{directions}</p>
+
+            </div>
+        </script>
     
-
-    <script type='text/template' id='results-template'>
-        <div class='recipeResult'>
-            <h2 class='cat'>{category}</h2>
-            <h2 class ='title'>{name}</h2>
-            <h3 class ='freeOf'>Free of: {allergens}</h3>
-
-            <ul class=recipeIngredients>
-                <h2 class='ingredientHead'>Ingredients:
-            </ul>
-            <p>{directions}</p>
-
-        </div>
-    </script>
-    </section>
 
     <section id='add-recipe'>
         <h2>Add a Recipe</h2>
@@ -147,7 +169,7 @@
 
     </section>
 
-    <script src="//code.jquery.com/jquery-2.1.0.js"></script>
+    <script   src="https://code.jquery.com/jquery-2.2.4.min.js"   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous"></script>
     <script src="app.js"></script>
 </body>
 

@@ -1,6 +1,4 @@
 html {
-
-    
     font-family: 'Shadows Into Light Two', cursive;
 }
 
@@ -10,14 +8,12 @@ body {
     margin: 0 auto;
     background-color: DarkTurquoise;
 }
-    
-    
 
 nav {
     position: relative;
 }
 
-nav ul > li {
+nav ul>li {
     font-size: 1.5rem;
     list-style: none;
     display: block;
@@ -26,88 +22,83 @@ nav ul > li {
     float: left;
 }
 
-
-
 nav ul li:last-child {
     float: right;
 }
 
-
-
 .overlay {
-	width: 100%;
-	height: 150%;
-	color: #fff;
-	background: DarkTurquoise;
-	position: absolute;
-	top: 0;
-	left: 0;
-	margin: 0;
-	z-index: 1000;
-	display: none;
+    width: 100%;
+    height: 150%;
+    color: #fff;
+    background: DarkTurquoise;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 0;
+    z-index: 1000;
+    display: none;
 }
 
 .content {
-	color: #fff;
-	background: Coral;
-	position: relative;
-	height: auto;
-	width: 600px;
-	border-radius: 3px;
-	top: 15%;
-	margin: auto auto;
-
+    color: #fff;
+    background: Coral;
+    position: relative;
+    height: auto;
+    width: 600px;
+    border-radius: 3px;
+    top: 15%;
+    margin: auto auto;
 }
 
 .content h3 {
-	margin: 0;
-	padding: 0.4em;
-	text-align: center;
-	font-size: 2.4em;
-	font-weight: 300;
-	opacity: 0.8;
-	background: LightSalmon;
-	border-radius: 3px 3px 0 0;
+    margin: 0;
+    padding: 0.4em;
+    text-align: center;
+    font-size: 2.4em;
+    font-weight: 300;
+    opacity: 0.8;
+    background: LightSalmon;
+    border-radius: 3px 3px 0 0;
 }
 
-.content > div {
-	padding: 15px 40px 30px;
-	margin: 0;
-	font-weight: 300;
-	font-size: 1.15em;
+.content>div {
+    padding: 15px 40px 30px;
+    margin: 0;
+    font-weight: 300;
+    font-size: 1.15em;
 }
 
-.content > div p {
-	margin: 0;
-	padding: 10px 0;
-	line-height: 2em;
-	text-align: justify;
+.content>div p {
+    margin: 0;
+    padding: 10px 0;
+    line-height: 2em;
+    text-align: justify;
 }
 
-.content > div ul {
-	margin-bottom: -30px;
-	padding: 0 0 30px 20px;
-	text-align: left;
+.content>div ul {
+    margin-bottom: -30px;
+    padding: 0 0 30px 20px;
+    text-align: left;
 }
 
-.content > div ul li {
-	padding: 5px 0;
-	display: block;	
-	list-style-type: disc;
-	line-height: 1.5em;
+.content>div ul li {
+    padding: 5px 0;
+    display: block;
+    list-style-type: disc;
+    line-height: 1.5em;
 }
 
-.content > div ul li strong{
-	text-decoration: underline;
+.content>div ul li strong {
+    text-decoration: underline;
 }
 
-.content > div a {
-	font-size: 0.8em;
-	background: LightSalmon;
-	color: #fff;
-	padding: 0.5em 2em;
-	margin-bottom: 50px;
-	border-radius: 3px;
+.content>div a {
+    font-size: 0.8em;
+    background: LightSalmon;
+    color: #fff;
+    padding: 0.5em 2em;
+    margin-bottom: 50px;
+    border-radius: 3px;
 }
 
 h1 {
@@ -124,7 +115,6 @@ h1 {
     border: 5px solid;
     border-radius: 20px;
     box-shadow: 3px 3px
-    
 }
 
 h2 {
@@ -153,24 +143,21 @@ button {
     font-size: medium;
 }
 
-
-
 .results {
     width: 65%;
     height: auto;
     margin: 2rem auto;
     padding-left: 1rem;
+    padding-right: 1rem;
     list-style: none;
     background-color: LightSalmon;
     border: 5px solid;
     border-radius: 20px;
     box-shadow: 3px 3px;
     display: block;
-    
 }
 
-.title .ingredientHead {
-    display: inline;
+.title, .ingredientHead {
     text-align: left;
 }
 
@@ -184,7 +171,6 @@ button {
     box-shadow: 3px 3px;
     display: none;
 }
-
 
 .addForm label {
     display: block;
@@ -203,20 +189,17 @@ input {
     width: 25%;
 }
 
-
- #name {
+#name {
     width: 50%;
     height: 5%;
 }
 
- .item {
+.item {
     width: 33%;
     margin: 2px;
     display: block;
     text-align: center;
 }
-
-
 
 textarea {
     vertical-align: top;
@@ -224,20 +207,9 @@ textarea {
     width: 75%;
 }
 
-
 #add-recipe button {
     height: 2.5rem;
     width: 33%;
     margin: 2rem 33%;
     font-size: medium;
 }
-
-
-
-
-
- 
-
-
-
-

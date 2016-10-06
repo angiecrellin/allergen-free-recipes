@@ -22,6 +22,7 @@ var listOfRecipes = {
                 'soy',
                 'wheat',
             ],
+    },{
 
             "name": 'Ham and Potato Soup',
             'ingredients': [
@@ -46,6 +47,8 @@ var listOfRecipes = {
                 'fish',
 
             ],
+            
+    },{
 
             'name': 'Grown Up Mac and Cheese',
             'ingredients': [
@@ -69,6 +72,7 @@ var listOfRecipes = {
                 'egg',
 
             ],
+    },{        
             
             'name': 'Puppy Chow',
             'ingredients': [
@@ -87,6 +91,7 @@ var listOfRecipes = {
                 'fish',
                 'egg', 
             ],
+    },{        
             
             'name': 'Apple Crisp',
             'ingredients': [
@@ -111,6 +116,7 @@ var listOfRecipes = {
                 'fish',
                 'egg', 
             ],
+    },{        
             
             'name': 'Fluffy French Toast',
             'ingredients': [
@@ -132,6 +138,7 @@ var listOfRecipes = {
                 'fish',
             ],
             
+    },{        
             'name': 'Lime Chicken Soft Tacos',
             'ingredients': [
                 '1 1/2 pounds skinless, boneless chicken breast meat - cubed',
@@ -158,6 +165,7 @@ var listOfRecipes = {
                 'fish',
                 'egg',
             ],
+    },{        
             
             'name': 'Balsamic Glazed Salmon Fillets',
             'ingredients': [
@@ -179,6 +187,7 @@ var listOfRecipes = {
                 'milk',
                 'egg',
             ],
+    },{        
             
             'name': 'Baked Buffalo Chicken Dip',
             'ingredients': [
@@ -202,6 +211,7 @@ var listOfRecipes = {
                 'fish',
                 'wheat',
             ],
+    },{        
             
             'name': 'Key Lime Pie',
             'ingredients': [
@@ -220,6 +230,7 @@ var listOfRecipes = {
                 'fish',
                 'egg',
             ],
+    },{        
             
             'name': 'Overnight Oats',
             'ingredients': [
@@ -241,6 +252,7 @@ var listOfRecipes = {
                 'wheat',
                 'soy',
             ],
+    },{        
             
             'name': 'Cherry Chicken Lettuce Wraps',
             'ingredients': [
@@ -266,6 +278,8 @@ var listOfRecipes = {
                 'egg',
             ],
             
+    },{        
+            
             'name': 'Grilled Brown Sugar Pork Chops',
             'ingredients': [
                 '1/2 cup brown sugar, firmly packed',
@@ -288,6 +302,7 @@ var listOfRecipes = {
                 'milk',
                 'egg',
             ],
+    },{        
             
             'name': 'Apple Chips',
             'ingredients': [
@@ -306,7 +321,7 @@ var listOfRecipes = {
                 'egg',
                 'soy',
             ],
-            
+    },{        
             'name': 'Gingersnaps',
             'ingredients': [
                 '3/4 cup margarine',
@@ -329,6 +344,7 @@ var listOfRecipes = {
                 'fish',
                 'milk',
             ],
+    },{        
             
             'name': 'Egg Free Pancakes',
             'ingredients': [
@@ -351,6 +367,7 @@ var listOfRecipes = {
                 'egg',
                 'soy',
             ],
+    },{        
             
             'name': 'Asian Lettuce Wraps',
             'ingredients': [
@@ -378,7 +395,8 @@ var listOfRecipes = {
                 'milk',
                 'egg',
             ],
-            
+    },{        
+        
             'name': 'Baked Ziti',
             'ingredients': [
                 '1 pound dry ziti pasta',
@@ -405,6 +423,7 @@ var listOfRecipes = {
                 'fish',
                 'egg',
             ],
+    },{        
             
             'name': 'Layered Taco Dip',
             'ingredients': [
@@ -427,6 +446,7 @@ var listOfRecipes = {
                 'fish',
                 'egg',
             ],
+    },{        
             
             'name': 'Caramel Popcorn',
             'ingredients': [
@@ -449,6 +469,8 @@ var listOfRecipes = {
                 'wheat',
             ],
             
+    },{    
+            
             'name': 'Beefy Breakfast Potatoes',
             'ingredients': [
                 '6 large potatoes, peeled and diced',
@@ -466,6 +488,7 @@ var listOfRecipes = {
                 'egg',
                 'wheat',
             ],
+    },{        
             
             'name': 'Chickpea Sandwhich Filling',
             'ingredients': [
@@ -486,6 +509,8 @@ var listOfRecipes = {
                 'fish',
                 'wheat',
             ],
+            
+    },{        
             
             'name': 'Slow Cooker Chile Verde',
             'ingredients': [
@@ -509,6 +534,7 @@ var listOfRecipes = {
                 'wheat',
                 'soy',
             ],
+    },{        
             
             'name': 'Chex Lemon Buddies',
             'ingredients': [
@@ -529,6 +555,7 @@ var listOfRecipes = {
                 'egg',
                 'wheat',
             ],
+    },{        
             
             'name': 'Chocolate Meringue Cookies',
             'ingredients': [
@@ -549,6 +576,7 @@ var listOfRecipes = {
                 'wheat',
                 'soy',
             ],
+    },{        
             
             'name': 'Sausage Egg Casserole',
             'ingredients': [
@@ -573,6 +601,7 @@ var listOfRecipes = {
                 'shellfish',
                 'fish',
             ],
+    },{        
             
             'name': 'Quick Brownbag Burritos',
             'ingredients': [
@@ -591,6 +620,7 @@ var listOfRecipes = {
                 'shellfish',
                 'fish',
             ],
+    },{        
             
             'name': 'Chicken Enchiladas',
             'ingredients': [
@@ -619,6 +649,7 @@ var listOfRecipes = {
                 'shellfish',
                 'fish',
             ],
+    },{        
             
             'name': 'Cinnamon Sweet Potato Chips',
             'ingredients': [
@@ -639,6 +670,7 @@ var listOfRecipes = {
                 'wheat',
                 'soy',
             ],
+    },{        
             
             'name': 'Apple Dumplings',
             'ingredients': [
@@ -657,6 +689,7 @@ var listOfRecipes = {
                 'shellfish',
                 'fish',
             ],
+    },{        
             
             'name': 'Monkey Bread',
             'ingredients': [
@@ -675,6 +708,7 @@ var listOfRecipes = {
                 'shellfish',
                 'fish',
             ],
+    },{        
             
             'name': 'Chicken Fried Rice',
             'ingredients': [
@@ -696,6 +730,7 @@ var listOfRecipes = {
                 'shellfish',
                 'fish',
             ],
+    },{        
             
             'name': 'Chicken Tikka Masala',
             'ingredients': [
@@ -728,6 +763,7 @@ var listOfRecipes = {
                 'fish',
                 'egg',
             ],
+    },{        
             
             'name': 'No Bake Granola Bars',
             'ingredients': [
@@ -751,6 +787,7 @@ var listOfRecipes = {
                 'egg',
                 'wheat',
             ],
+    },{        
           
             'name': 'Chocolaty Chocolate Cake',
             'ingredients': [
@@ -770,6 +807,7 @@ var listOfRecipes = {
                 'shellfish',
                 'fish',
             ],
+    },{        
             
             'name': 'Cherry Almond Granola',
             'ingredients': [
@@ -795,6 +833,7 @@ var listOfRecipes = {
                 'wheat',
                 'soy',
             ],
+    },{        
             
             'name': 'Black Bean Burger',
             'ingredients': [
@@ -819,6 +858,7 @@ var listOfRecipes = {
                 'wheat',
                 'soy',
             ],
+    },{        
             
             'name': 'Turkey and Sweet Potato Meatballs',
             'ingredients': [
@@ -840,6 +880,7 @@ var listOfRecipes = {
                 'fish',
                 'milk',
             ],
+    },{        
             
             'name': 'Homemade Pita Chips',
             'ingredients': [
@@ -857,6 +898,7 @@ var listOfRecipes = {
                 'shellfish',
                 'fish',
             ],
+    },{        
             
             'name': 'Zucchini and Blueberry Bread',
             'ingredients': [
@@ -881,6 +923,7 @@ var listOfRecipes = {
                 'milk',
                 'soy',
             ],
+    },{        
             
             'name': 'Creamy Pumpkin Curry Soup',
             'ingredients': [
@@ -907,6 +950,7 @@ var listOfRecipes = {
                 'soy',
                 'wheat',
             ],
+    },{        
             
             'name': 'Crockpot Hungarian Goulash',
             'ingredients': [
@@ -934,6 +978,7 @@ var listOfRecipes = {
                 'soy',
                 'wheat',
             ],
+    },{        
             
             'name': 'Homemade Applesauce',
             'ingredients': [
@@ -954,6 +999,7 @@ var listOfRecipes = {
                 'soy',
                 'wheat',
             ],
+    },{        
             
             'name': 'Blackberry and Raspberry Crisp',
             'ingredients': [
@@ -978,7 +1024,8 @@ var listOfRecipes = {
                 'soy',
                 'wheat',
             ],
-        },
+    },
 
     ]
 };
+module.exports = listOfRecipes.recipes
