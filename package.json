@@ -6,11 +6,11 @@
   "scripts": {
     "test": "mocha",
     "start": "node server.js"
-    
   },
   "author": "Angie Crellin",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.15.2",
     "express": "^4.14.0",
     "mongoose": "^4.6.1"
   },
