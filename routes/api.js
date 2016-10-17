@@ -7,9 +7,6 @@ module.exports = router;
 
 var Recipe = require('../models/recipe');
 
-
-
-
 router.get('/recipes', function(req, res) {
     Recipe.find(function(err, recipes) {
         if (err) {
@@ -108,12 +105,16 @@ router.get('/recipes/deleteAll', function(request, response) {
 
         }
         response.status(200).json({});
-    })
-})
+    });
+});
 
-router.get('/recipes/search', function(request, response){
-    console.log(request.query)
-    Recipe.find({'allergenFree': {$all:request.query.allergenFree}}, function(err,results){
+router.get('/recipes/search', function(request, response) {
+    console.log(request.query);
+    Recipe.find({
+        'allergenFree': {
+            $all: request.query.allergenFree
+        }
+    }, function(err, results) {
         if (err) {
             return response.status(400).json({
                 message: 'an error occurred'
@@ -121,8 +122,8 @@ router.get('/recipes/search', function(request, response){
 
         }
         response.status(200).json(results);
-    })
-})
+    });
+});
 
 router.use('*', function(req, res) {
     res.status(404).json({

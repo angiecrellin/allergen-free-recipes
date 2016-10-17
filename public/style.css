@@ -157,7 +157,8 @@ button {
     display: none;
 }
 
-.title, .ingredientHead {
+.title,
+.ingredientHead {
     text-align: left;
 }
 

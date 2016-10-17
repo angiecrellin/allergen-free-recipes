@@ -125,7 +125,7 @@ describe('allergen-free-recipes', function() {
       existingRecipes = res.body;
         done();
       });
-    })
+    });
     
 
     it('should delete an item on DELETE', function(done) {
@@ -136,7 +136,7 @@ describe('allergen-free-recipes', function() {
           res.should.have.status(200);
           res.should.be.json;
           res.body.should.be.a('object');
-          done();
+        done();
         });
 
   });
@@ -147,7 +147,7 @@ describe('allergen-free-recipes', function() {
           .end(function(err, res) {
           res.should.have.status(404);
           res.should.be.json;
-          res.body.message.should.equal('id does not exist')
+          res.body.message.should.equal('id does not exist');
           done();
         });
   });

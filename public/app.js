@@ -7,42 +7,33 @@ function getSearchResults(data) {
         url: '/api/recipes/search',
         data: data,
 
-    })
+    });
 }
 
-
-/*var getRecipes = function() {
-    return $.ajax({
-        method: 'GET',
-        url: '/api/recipes',
-    });
-};*/
-
-
 var showRecipes = function(data) {
-    var $searchResults = $('.results')
+    var $searchResults = $('.results');
 
     data.forEach(function(recipe) {
-        var template = $('#results-template').html()
+        var template = $('#results-template').html();
         var html = template.replace('{name}', recipe.name)
             .replace('{allergens}', recipe.allergenFree.join(', '))
             .replace('{category}', recipe.category)
-            .replace('{directions}', recipe.directions)
-        var $el = $(html)
+            .replace('{directions}', recipe.directions);
+        var $el = $(html);
         recipe.ingredients.forEach(function(ingredient) {
             $el.find('.recipeIngredients').append('<li>' + ingredient + '</li>')
-        })
+        });
         $searchResults.append($el);
     });
-    
+
     $searchResults.show();
 
 };
 
-var clearRecipes = function(){
+var clearRecipes = function() {
     $('.results').html('').hide();
-    
-}
+
+};
 
 var getAndShowRecipes = function() {
     getSearchResults().then(function(results) {
@@ -50,31 +41,26 @@ var getAndShowRecipes = function() {
     });
 };
 
-// getAndShowRecipes();
-
 $(document).ready(function() {
 
     $('.search-form').on('submit', function(event) {
         event.preventDefault();
 
-        var data = getInputAllergens($('.search-form'))
-        console.log(data)
+        var data = getInputAllergens($('.search-form'));
+        console.log(data);
         getSearchResults({
             allergenFree: data
         }).then(function(results) {
             showRecipes(results);
         });
-        
-        
 
+    });
 
-    })
-
-    $('.new').on('click', function(event){
+    $('.new').on('click', function(event) {
         event.preventDefault();
         $('.search-form').get(0).reset();
         clearRecipes();
-    })
+    });
 
     $(".howTo").click(function() {
         $(".overlay").fadeIn(1000);
@@ -87,15 +73,14 @@ $(document).ready(function() {
     });
 
 
-    var $addForm = $('.addForm')
-    var $addAnItemContainer = $('.addAnItem')
+    var $addForm = $('.addForm');
+    var $addAnItemContainer = $('.addAnItem');
     $('.add-ingredient').on('click', function(event) {
         event.preventDefault();
         $addAnItemContainer.append($('<input>', {
             'class': 'item'
-        }))
-    })
-
+        }));
+    });
 
 
     $addForm.on('submit', function(event) {
@@ -119,11 +104,9 @@ $(document).ready(function() {
 
         });
 
-
-
         resetForm();
 
-    })
+    });
 
 
     function resetForm() {
@@ -133,32 +116,28 @@ $(document).ready(function() {
 
     $('.addRecipe').click(function() {
         $('#add-recipe').show();
-    })
-
-
+    });
 
     function getInputIngredients() {
         var data = [];
         $addForm.find('.addAnItem .item').each(function() {
-            var $item = $(this)
+            var $item = $(this);
             if ($item.val() !== '') {
                 data.push($item.val());
             }
 
-        })
+        });
         return data;
-
 
     }
 
     function getInputAllergens($form) {
         var data = [];
         $form.find('.allergenInput:checked').each(function() {
-            var $item = $(this)
+            var $item = $(this);
             data.push($item.val());
 
-
-        })
+        });
         return data;
 
     }
@@ -171,4 +150,4 @@ $(document).ready(function() {
             contentType: 'application/json'
         });
     }
-})
+});
