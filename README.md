@@ -22,6 +22,11 @@
 
 ##Screenshots
 
+[Screenshot One](./screenshots/ScreenShotOne.png)  
+[Screenshot Two](./screenshots/ScreenShotTwo.png)  
+[Screenshot Three](./screenshots/ScreenShotThree.png)
+
+
 
 ##Summary
 This app allows families living with food allergies to search for safe,  
@@ -35,3 +40,8 @@ Here's a link (https://arcane-citadel-54908.herokuapp.com/) to demo the app.
 
 
 ##Technology
+- Node.js/Express  
+- Mongoose/MongoDB  
+- Mocha/Chai
+- HTML/CSS
+- Javascript/jQuery
