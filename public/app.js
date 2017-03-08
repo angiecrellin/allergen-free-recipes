@@ -45,7 +45,7 @@ $(document).ready(function() {
 
     $('.search-form').on('submit', function(event) {
         event.preventDefault();
-
+        
         var data = getInputAllergens($('.search-form'));
         console.log(data);
         getSearchResults({

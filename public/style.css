@@ -121,6 +121,7 @@ h1 {
     background-color: DarkTurquoise;
     border: 3px solid Coral;
     border-radius: 20px;
+    padding: 0 1rem;
     /*box-shadow: 3px 3px Coral;*/
 }
 
@@ -182,6 +183,7 @@ button:hover {
     background-color: DarkTurquoise;
     border: 3px solid Coral;
     border-radius: 20px;
+    padding: 0 1rem;
     /*box-shadow: 3px 3px;*/
     display: none;
 }
@@ -239,4 +241,46 @@ textarea {
     color: coral;
     font-size: 1.5rem;
     text-decoration: none;
+}
+
+@media only screen and (max-width:900px) {
+    .search, .results, #add-recipe {
+        width:90%;
+    }
+}
+
+@media only screen and (max-width:700px) {
+    
+    nav {
+        text-align: center;
+        padding-top:2rem;
+    }
+    nav ul {
+        padding: 0;
+        margin: 0;
+        
+    }
+    nav ul li:last-child {
+        float: none;
+    }
+    nav ul li{
+        padding: 0;
+        float: none;
+    }
+    
+    h1 {
+        padding-top: 2rem;
+    }
+    
+    .recipeSearch {
+        width: 50%;
+        display: block;
+        margin: 1.25rem auto;
+    }
+}
+
+@media only screen and (max-width:500px) {
+    .search, .results, #add-recipe {
+        width:85%;
+    }
 }
