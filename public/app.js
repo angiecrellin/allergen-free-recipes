@@ -47,6 +47,10 @@ $(document).ready(function() {
         event.preventDefault();
         
         var data = getInputAllergens($('.search-form'));
+        
+        if (data == "") {
+        alert("Please Choose at Least One Allergen to Avoid");
+        }
         console.log(data);
         getSearchResults({
             allergenFree: data
