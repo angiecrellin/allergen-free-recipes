@@ -125,6 +125,10 @@ h1 {
     /*box-shadow: 3px 3px Coral;*/
 }
 
+label {
+    white-space: nowrap;
+}
+
 h2 {
     text-align: center;
     font-size: 1.5rem;
