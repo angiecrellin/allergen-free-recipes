@@ -159,7 +159,8 @@ button:hover {
     height: 2.5rem;
     width: 33%;
     margin: 2rem 33%;
-    font-size: medium;
+    font-size: 1rem;
+    background-color: #c0c0c0;
 }
 
 .results {
@@ -287,5 +288,10 @@ textarea {
 @media only screen and (max-width:500px) {
     .search, .results, #add-recipe {
         width:85%;
+
+    }
+    
+    .recipeSearch {
+        font-size: 0.9rem;
     }
 }
